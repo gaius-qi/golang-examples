@@ -32,14 +32,11 @@ type Weight struct {
 }
 
 func NewConfig() *Config {
-	// don't set Supernodes as default value, the SupernodeLocator will
-	// do this in a better way.
 	return &Config{
 		Name: defaultName,
 	}
 }
 
-// Load loads properties from config file.
 func (c *Config) LoadYaml(path string) error {
 	content, err := ioutil.ReadFile(path)
 	if err != nil {
