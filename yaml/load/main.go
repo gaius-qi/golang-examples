@@ -9,7 +9,7 @@ import (
 
 func main() {
 	config := NewConfig()
-	err := config.Load("./config.yaml")
+	err := config.LoadYaml("./config.yaml")
 	if err != nil {
 		panic(err)
 	}
@@ -40,7 +40,7 @@ func NewConfig() *Config {
 }
 
 // Load loads properties from config file.
-func (c *Config) Load(path string) error {
+func (c *Config) LoadYaml(path string) error {
 	content, err := ioutil.ReadFile(path)
 	if err != nil {
 		return fmt.Errorf("failed to load yaml %s when reading file: %v", path, err)
