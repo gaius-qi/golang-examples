@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-var HostIp string
+var HostIP string
 var HostName, _ = os.Hostname()
 
 func main() {
@@ -21,13 +21,13 @@ func main() {
 		if ipNet, ok := value.(*net.IPNet); ok &&
 			!ipNet.IP.IsLoopback() && !ipNet.IP.IsUnspecified() {
 			if ip := ipNet.IP.To4(); ip != nil {
-				HostIp = ip.String()
+				HostIP = ip.String()
 				break
 			}
 		}
 	}
 
-	if HostIp == "" {
+	if HostIP == "" {
 		panic("host ip is not exist")
 	}
 
