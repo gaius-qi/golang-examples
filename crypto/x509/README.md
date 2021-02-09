@@ -46,7 +46,12 @@ Then generate CA's certificate using the config file `openssl.conf`.
 
 ```bash
 openssl req -new -key ca.key -nodes -out ca.csr -config openssl.conf
-openssl x509 -req -days 36500 -extfile openssl.conf -extensions v3_ca -in ca.csr -signkey ca.key -out rootCA.crt
+openssl x509 -req -days 36500 -extfile openssl.conf -extensions v3_ca -in ca.csr -signkey ca.key -out ca.crt
+```
+
+Using command to look at the details of the server certificate reveals.
+```bash
+openssl x509 -in ca.crt -text -noout
 ```
 
 ## Generate Server CA
@@ -66,5 +71,5 @@ openssl req -new -key sca.key -out sca.csr
 Create server cert.
 
 ```bash
-openssl x509 -req -in sca.csr -CA ca.crt -CAkey ca.key -out sca.crt -days 36500
+openssl x509 -req -in sca.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out sca.crt -days 36500
 ```
