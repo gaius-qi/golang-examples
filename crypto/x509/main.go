@@ -18,6 +18,5 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("Leaf %+v\n", cert)
 	fmt.Printf("Leaf %+v\n", leaf.IsCA)
 }
