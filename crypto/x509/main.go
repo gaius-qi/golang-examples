@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// cert.Certificate is a chain of one or more certificates, leaf first.
-	cert, err := tls.LoadX509KeyPair("certs/server.crt", "certs/server.key")
+	cert, err := tls.LoadX509KeyPair("certs/ca.crt", "certs/ca.key")
 	if err != nil {
 		panic(err)
 	}

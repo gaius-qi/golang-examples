@@ -8,7 +8,7 @@ Create root private key.
 openssl genrsa -out ca.key 2048
 ```
 
-Open openssl config file `openssl.conf`. Note set `basicConstraints` to true, that you can modify the values.
+Open openssl config file `openssl.conf`. Note set `basicConstraints`'s CA to true, that you can modify the values.
 
 ```text
 [ req ]
@@ -50,6 +50,7 @@ openssl x509 -req -days 36500 -extfile openssl.conf -extensions v3_ca -in ca.csr
 ```
 
 Using command to look at the details of the server certificate reveals.
+
 ```bash
 openssl x509 -in ca.crt -text -noout
 ```
