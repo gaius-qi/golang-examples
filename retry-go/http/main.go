@@ -10,7 +10,7 @@ import (
 
 func main() {
 	num := 0
-	url := "http://dsafdsafdsafdsa.com"
+	url := "http://aaaaaaa.com"
 	var body []byte
 
 	err := retry.Do(
