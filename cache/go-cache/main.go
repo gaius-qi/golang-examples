@@ -37,5 +37,5 @@ func main() {
 	fmt.Printf("expire: %t, duration: %s, value: %#v\n", ok, duration, x)
 
 	x, found := c.Get("cat")
-	fmt.Printf("found: %t, value: %#v\n", found, x)
+	fmt.Printf("found: %t, value: %#v, items: %#v\n", found, x, c.Items())
 }
