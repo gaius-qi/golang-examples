@@ -8,9 +8,9 @@ import (
 )
 
 type Animal struct {
-	name   string
-	number int
-	height int
+	Name   string
+	Number int
+	Height int
 }
 
 func main() {
@@ -20,16 +20,16 @@ func main() {
 
 	// Init cat
 	cat := &Animal{
-		name:   "jack",
-		number: 1,
-		height: 1,
+		Name:   "jack",
+		Number: 1,
+		Height: 1,
 	}
 
 	// Set the value of the key "foo" to "bar", with the default expiration time
 	c.Set("cat", cat, 3*time.Second)
 	if x, found := c.Get("cat"); found {
 		cat := x.(*Animal)
-		fmt.Printf("name: %s, number: %d, height: %d\n", cat.name, cat.number, cat.height)
+		fmt.Printf("name: %s, number: %d, height: %d\n", cat.Name, cat.Number, cat.Height)
 	}
 
 	time.Sleep(2 * time.Second)
@@ -38,4 +38,16 @@ func main() {
 
 	x, found := c.Get("cat")
 	fmt.Printf("found: %t, value: %#v, items: %#v\n", found, x, c.Items())
+
+	if err := c.SaveFile("./cache"); err != nil {
+		fmt.Println("save file err:", err)
+		return
+	}
+
+	if err := c.LoadFile("./cache"); err != nil {
+		fmt.Println("load file err:", err)
+		return
+	}
+
+	fmt.Println(c.Items())
 }
