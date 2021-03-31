@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/patrickmn/go-cache"
@@ -11,6 +13,11 @@ type Animal struct {
 	Name   string
 	Number int
 	Height int
+}
+
+type Item struct {
+	Object     interface{}
+	Expiration int64
 }
 
 func main() {
@@ -48,6 +55,20 @@ func main() {
 		fmt.Println("load file err:", err)
 		return
 	}
-
 	fmt.Println(c.Items())
+
+	fp, err := os.Open("./cache")
+	if err != nil {
+		fmt.Println("open file err:", err)
+		return
+	}
+
+	dec := gob.NewDecoder(fp)
+	items := map[string]Item{}
+	if err := dec.Decode(&items); err != nil {
+		fmt.Println("decode err:", err)
+		return
+	}
+
+	fmt.Printf("dec: %#v, items: %#v", dec, items)
 }
