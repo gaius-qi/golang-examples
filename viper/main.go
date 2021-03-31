@@ -13,5 +13,5 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(viper.Get("nodes"))
+	fmt.Println(viper.Get("nodes"), viper.AllKeys(), viper.AllSettings())
 }
