@@ -1,0 +1,6 @@
+name: dragonfly
+nodes:
+  - id: 1
+    weight: 10
+  - id: 2
+    weight: 40
