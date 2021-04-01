@@ -33,7 +33,6 @@ func TestUseReturnsErrorFromDo(t *testing.T) {
 	mockDoer.EXPECT().DoSomething(123, "Hello GoMock").Return(dummyError).Times(1)
 
 	err := testUser.Use()
-
 	if err != dummyError {
 		t.Fail()
 	}
