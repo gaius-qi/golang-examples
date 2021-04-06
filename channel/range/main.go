@@ -10,6 +10,7 @@ func makeCakeAndSend(cs chan string, count int) {
 		cakeName := "Strawberry Cake " + strconv.Itoa(i)
 		cs <- cakeName //send a strawberry cake
 	}
+
 	close(cs)
 }
 
