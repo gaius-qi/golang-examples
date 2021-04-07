@@ -15,6 +15,7 @@ func main() {
 			w.Write([]byte(time.Now().String()))
 		}
 	}()
+
 	for {
 		dataRead := make([]byte, 256)
 		n, _ := r.Read(dataRead)
