@@ -35,5 +35,5 @@ func main() {
 		panic("host name is not exist")
 	}
 
-	fmt.Printf("hostName: %s, hostIp: %s", HostName, HostIp)
+	fmt.Printf("hostName: %s", HostName)
 }
