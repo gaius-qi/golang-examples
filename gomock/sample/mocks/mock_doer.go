@@ -38,6 +38,7 @@ func (m *MockDoer) DoSomething(arg0 int, arg1 string) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DoSomething", arg0, arg1)
 	ret0, _ := ret[0].(error)
+
 	return ret0
 }
 
