@@ -10,6 +10,7 @@ import (
 
 func main() {
 	num := 1
+
 	err := retry.Do(
 		func() error {
 			if num > 0 {
