@@ -10,5 +10,6 @@ require (
 	github.com/sgreben/testing-with-gomock v0.0.0-20180127205614-2990fb8af60c
 	github.com/spf13/viper v1.7.1
 	github.com/willf/bitset v1.1.11
+	golang.org/x/sync v0.0.0-20190423024810-112230192c58
 	gopkg.in/yaml.v2 v2.4.0
 )
