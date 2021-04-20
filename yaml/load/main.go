@@ -42,6 +42,7 @@ func (c *Config) LoadYaml(path string) error {
 	if err != nil {
 		return fmt.Errorf("failed to load yaml %s when reading file: %v", path, err)
 	}
+
 	if err = yaml.Unmarshal(content, c); err != nil {
 		return fmt.Errorf("failed to load yaml %s: %v", path, err)
 	}
