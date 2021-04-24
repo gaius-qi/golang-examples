@@ -42,6 +42,7 @@ func testInterface(animaler Animaler) {
 }
 
 func main() {
+
 	cat := Cat{Animal: Animal{name: "Jack", age: 2, food: "fish"}, time: 8}
 	cat.sleep()
 	testInterface(cat)
