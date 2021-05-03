@@ -11,6 +11,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
 	fmt.Printf("create file success: %v", f)
 
 	dir, err := os.UserCacheDir()
@@ -18,5 +19,6 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
 	fmt.Printf("user cache dir: %v", dir)
 }
