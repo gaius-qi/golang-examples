@@ -10,7 +10,6 @@ import (
 
 func main() {
 	i := 0
-
 	c := cron.New()
 	spec := fmt.Sprintf("@every %s", 2*time.Second)
 
