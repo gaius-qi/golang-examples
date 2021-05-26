@@ -11,7 +11,7 @@ import (
 func main() {
 	i := 0
 	c := cron.New()
-	spec := fmt.Sprintf("@every %s", 2*time.Second)
+	spec := fmt.Sprintf("@every %s", 3*time.Second)
 
 	_, err := c.AddFunc(spec, func() {
 		i++
