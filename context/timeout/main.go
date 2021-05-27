@@ -37,9 +37,9 @@ func run() {
 	done := make(chan struct{})
 
 	go func() {
+		defer close(done)
 		time.Sleep(1 * time.Second)
 		fmt.Println("running")
-		close(done)
 	}()
 
 	select {
