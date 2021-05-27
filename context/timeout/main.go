@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	asyncCall()
+	mutliGoroutineTimeout()
 }
 
 func asyncCall() {
@@ -24,6 +24,30 @@ func asyncCall() {
 		return
 	case <-time.After(2 * time.Second):
 		fmt.Println("timeout!!!")
+		return
+	}
+}
+
+func mutliGoroutineTimeout() {
+	run()
+	time.Sleep(10 * time.Second)
+}
+
+func run() {
+	done := make(chan bool, 1)
+
+	go func() {
+		time.Sleep(2 * time.Second)
+		fmt.Println("running")
+		done <- true
+	}()
+
+	select {
+	case <-time.After(1 * time.Second):
+		fmt.Println("timeout")
+		return
+	case <-done:
+		fmt.Println("done")
 		return
 	}
 }
