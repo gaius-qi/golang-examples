@@ -34,16 +34,16 @@ func mutliGoroutineTimeout() {
 }
 
 func run() {
-	done := make(chan bool, 1)
+	done := make(chan struct{})
 
 	go func() {
-		time.Sleep(2 * time.Second)
+		time.Sleep(1 * time.Second)
 		fmt.Println("running")
-		done <- true
+		close(done)
 	}()
 
 	select {
-	case <-time.After(1 * time.Second):
+	case <-time.After(2 * time.Second):
 		fmt.Println("timeout")
 		return
 	case <-done:
