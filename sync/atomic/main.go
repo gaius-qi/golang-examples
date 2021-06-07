@@ -48,6 +48,7 @@ func swapInt64() {
 func swapPointer() {
 	var unsafePPT = (*unsafe.Pointer)(unsafe.Pointer(&pT))
 	var ta, tb = T{1}, T{2}
+
 	atomic.StorePointer(
 		unsafePPT, unsafe.Pointer(&ta))
 	fmt.Println(pT) // &{1}
