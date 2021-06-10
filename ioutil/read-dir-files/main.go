@@ -20,17 +20,19 @@ func main() {
 
 	var books []Book
 	for _, file := range fileInfos {
-		b, err := ioutil.ReadFile(filepath.Join("./testdata", file.Name()))
-		if err != nil {
-			panic(err)
-		}
+		if !file.IsDir() {
+			b, err := ioutil.ReadFile(filepath.Join("./testdata", file.Name()))
+			if err != nil {
+				panic(err)
+			}
 
-		var book Book
-		if err := json.Unmarshal(b, &book); err != nil {
-			panic(err)
-		}
+			var book Book
+			if err := json.Unmarshal(b, &book); err != nil {
+				panic(err)
+			}
 
-		books = append(books, book)
-		fmt.Println(books)
+			books = append(books, book)
+			fmt.Println(books)
+		}
 	}
 }
