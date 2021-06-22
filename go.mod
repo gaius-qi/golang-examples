@@ -9,6 +9,7 @@ require (
 	github.com/golang/mock v1.5.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/robfig/cron/v3 v3.0.1
+	github.com/rocketlaunchr/remember-go v1.1.6
 	github.com/sgreben/testing-with-gomock v0.0.0-20180127205614-2990fb8af60c
 	github.com/sirupsen/logrus v1.2.0
 	github.com/spf13/viper v1.7.1
