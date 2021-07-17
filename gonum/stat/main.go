@@ -41,6 +41,7 @@ func main() {
 	sort.Float64s(xs) //数组排序
 	fmt.Print("排序后数组：")
 	fmt.Println(xs)
+
 	media := stat.Quantile(0.5, stat.Empirical, xs, nil)
 	fmt.Print("中位数：")
 	fmt.Println(media)
