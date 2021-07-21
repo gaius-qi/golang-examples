@@ -22,9 +22,9 @@ func main() {
 
 func startServer() (*machinery.Server, error) {
 	var cnf = &config.Config{
-		Broker:        "redis://dragonfly2_dev:dragonfly2_dev@127.0.0.1:6379/1",
+		Broker:        "redis://username:password@127.0.0.1:6379/1",
 		DefaultQueue:  "global_tasks",
-		ResultBackend: "redis://dragonfly2_dev:dragonfly2_dev@127.0.0.1:6379/2",
+		ResultBackend: "redis://username:password@127.0.0.1:6379/2",
 	}
 
 	server, err := machinery.NewServer(cnf)
