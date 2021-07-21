@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	proxy := NewProxy("127.0.0.1:8000", "r-8vbb8713435280d4.redis.zhangbei.rds.aliyuncs.com:6379")
+	proxy := NewProxy("127.0.0.1:8000", "redis:6379")
 	proxy.Start()
 }
 
