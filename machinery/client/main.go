@@ -13,8 +13,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	globalWorker1 := globalServer.NewWorker("worker1", 10)
 	go func() {
+		globalWorker1 := globalServer.NewWorker("worker1", 10)
 		if err := globalWorker1.Launch(); err != nil {
 			panic(err)
 		}
