@@ -1,14 +1,21 @@
 module github.com/gaius-qi/golang-examples
 
-go 1.15
+go 1.16
 
 require (
 	github.com/RichardKnop/machinery v1.10.6
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/distribution/distribution v2.7.1+incompatible
+	github.com/docker/distribution v2.7.1+incompatible
+	github.com/docker/go-metrics v0.0.1 // indirect
+	github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7 // indirect
 	github.com/gin-gonic/gin v1.7.2
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e
 	github.com/golang/mock v1.5.0
+	github.com/gorilla/mux v1.8.0 // indirect
+	github.com/opencontainers/go-digest v1.0.0 // indirect
+	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/rocketlaunchr/remember-go v1.1.6
