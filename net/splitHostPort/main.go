@@ -11,4 +11,10 @@ func main() {
 
 	host2, port2, _ := net.SplitHostPort("localhost:1010")
 	fmt.Println(host2, port2)
+
+	host3, port3, err := net.SplitHostPort(":1010")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(host3, port3)
 }
