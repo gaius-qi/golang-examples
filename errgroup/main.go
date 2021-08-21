@@ -35,6 +35,6 @@ func main() {
 		return errors.New("goroutine 2")
 	})
 
-	werr2 := g.Wait()
+	werr2 := g2.Wait()
 	fmt.Println(werr2)
 }
