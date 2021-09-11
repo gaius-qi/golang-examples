@@ -17,7 +17,6 @@ func main() {
 		i++
 		log.Println("cron running:", i)
 	})
-
 	if err != nil {
 		fmt.Println(err)
 		return
