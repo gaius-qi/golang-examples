@@ -27,9 +27,16 @@ func main() {
 	fmt.Println("First get person:", p)
 
 	p.Name = "jack"
-	fmt.Printf("Set person name")
-
 	pool.Put(p)
+	fmt.Println("Set person jack")
+
+	p2 := &Person{Name: "lucy"}
+	pool.Put(p2)
+	fmt.Println("Set person lucy")
+
+	p3 := &Person{Name: "lilei"}
+	pool.Put(p3)
+	fmt.Println("Set person lilei")
 
 	fmt.Println("Get persion", pool.Get().(*Person))
 	fmt.Println("Get persion", pool.Get().(*Person))
