@@ -18,15 +18,13 @@ func main() {
 	encodePW := string(hash)
 	log.Println(encodePW)
 
-	err = bcrypt.CompareHashAndPassword([]byte(encodePW), []byte(passwordOK))
-	if err != nil {
+	if err := bcrypt.CompareHashAndPassword([]byte(encodePW), []byte(passwordOK)); err != nil {
 		log.Println("password wrong")
 	} else {
 		log.Println("password ok")
 	}
 
-	err = bcrypt.CompareHashAndPassword([]byte(encodePW), []byte(passwordERR))
-	if err != nil {
+	if err = bcrypt.CompareHashAndPassword([]byte(encodePW), []byte(passwordERR)); err != nil {
 		log.Println("password wrong")
 	} else {
 		log.Println("password ok")
@@ -36,6 +34,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	if c != bcrypt.DefaultCost {
 		log.Printf("expected cost is %d, bug got %d", bcrypt.DefaultCost, c)
 	}
