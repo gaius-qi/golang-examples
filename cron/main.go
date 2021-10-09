@@ -13,11 +13,10 @@ func main() {
 	c := cron.New()
 	spec := fmt.Sprintf("@every %s", 3*time.Second)
 
-	_, err := c.AddFunc(spec, func() {
+	if _, err := c.AddFunc(spec, func() {
 		i++
 		log.Println("cron running:", i)
-	})
-	if err != nil {
+	}); err != nil {
 		fmt.Println(err)
 		return
 	}
