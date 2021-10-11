@@ -48,7 +48,6 @@ func main() {
 		Dial:                (dialer).Dial,
 		TLSHandshakeTimeout: 2 * time.Second,
 	}
-
 	client := &http.Client{
 		Transport: transport,
 		Timeout:   time.Duration(10000) * time.Millisecond,
