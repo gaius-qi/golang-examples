@@ -8,8 +8,9 @@ import (
 )
 
 type Book struct {
-	Id    string `json: "id"`
-	Title string `json: "title"`
+	Id     string `json: "id"`
+	Title  string `json: "title"`
+	Status string
 }
 
 func main() {
