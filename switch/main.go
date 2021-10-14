@@ -23,15 +23,15 @@ func main() {
 		case <-ticker.C:
 			switch TaskStatusWaiting {
 			case TaskStatusRunning, TaskStatusSeeding:
+				fmt.Println("running and seeding")
 			case TaskStatusSuccess:
 				fmt.Println("success")
 				return
 			case TaskStatusWaiting:
-				if false {
+				if true {
 					fmt.Println("waiting true")
 					break
 				}
-
 				fallthrough
 			default:
 				fmt.Println("default")
