@@ -41,7 +41,6 @@ func main() {
 		},
 	}
 	req = req.WithContext(httptrace.WithClientTrace(req.Context(), trace))
-
 	transport := &http.Transport{
 
 		DialContext:         (dialer).DialContext,
