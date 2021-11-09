@@ -12,4 +12,8 @@ func main() {
 	fmt.Println(cars)
 	cars = append(cars, "d")
 	fmt.Println(cars)
+
+	foods := (make([]string, 2))
+	foods[3] = "apple"
+	fmt.Println(foods)
 }
