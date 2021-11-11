@@ -14,6 +14,10 @@ func main() {
 	fmt.Println(cars)
 
 	foods := (make([]string, 2))
-	foods[3] = "apple"
+	foods[1] = "apple"
 	fmt.Println(foods)
+
+	var person []string
+	person[10] = "lucy"
+	fmt.Println(len(person))
 }
