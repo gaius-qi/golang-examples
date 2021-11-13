@@ -10,7 +10,6 @@ func main() {
 		Addr:    ":8080",
 		Handler: &Proxy{},
 	}
-
 	server.ListenAndServe()
 }
 
