@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 const (
 	CategoryBooks  = iota // 0
@@ -28,8 +31,14 @@ const (
 	IgShellfish                         // 1 << 4 which is 00010000
 )
 
+const (
+	FooWeight float64 = 0.1
+	BarWeight         = 0.2
+)
+
 func main() {
 	fmt.Println(CategoryBooks, CategoryHealth, CategoryClothing)
 	fmt.Println(TypicalNoob, TypicalHipster, TypicalUnixWizard, TypicalStartupFounder)
 	fmt.Println(IgEggs, IgChocolate, IgNuts, IgStrawberries, IgShellfish)
+	fmt.Println(reflect.TypeOf(FooWeight), reflect.TypeOf(BarWeight))
 }
