@@ -20,4 +20,13 @@ func main() {
 	var person []string
 	person[10] = "lucy"
 	fmt.Println(len(person))
+
+	rooms := make([]int, 0, 2)
+	things := []int{0, 1, 2, 3}
+	for _, thing := range things {
+		fmt.Println("place thing", thing)
+		rooms = append(rooms, thing)
+	}
+
+	fmt.Println("rooms", rooms)
 }
