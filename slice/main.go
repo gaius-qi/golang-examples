@@ -27,6 +27,16 @@ func main() {
 		fmt.Println("place thing", thing)
 		rooms = append(rooms, thing)
 	}
-
 	fmt.Println("rooms", rooms)
+
+	box := []int{}
+	items := []int{0, 1, 2, 3}
+	for index, item := range items {
+		if index > 2 {
+			break
+		}
+
+		box = append(box, item)
+	}
+	fmt.Println("box", box)
 }
