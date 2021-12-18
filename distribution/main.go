@@ -15,6 +15,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
 	fmt.Println("named:", named.String())
 
 	repo, err := client.NewRepository(named, "https://registry-1.docker.io", http.DefaultTransport)
@@ -31,5 +32,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
 	fmt.Println("manifests:", mf)
 }
