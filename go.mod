@@ -6,6 +6,7 @@ require (
 	github.com/RichardKnop/machinery v1.10.6
 	github.com/Showmax/go-fqdn v1.0.0
 	github.com/avast/retry-go v3.0.0+incompatible
+	github.com/bits-and-blooms/bitset v1.2.1
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/distribution/distribution v2.7.1+incompatible
 	github.com/docker/distribution v2.7.1+incompatible
