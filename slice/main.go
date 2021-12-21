@@ -17,26 +17,29 @@ func main() {
 	foods[1] = "apple"
 	fmt.Println(foods)
 
-	var person []string
-	person[10] = "lucy"
-	fmt.Println(len(person))
+	// var person []string
+	// person[10] = "lucy"
+	// fmt.Println(len(person))
 
-	rooms := make([]int, 0, 2)
-	things := []int{0, 1, 2, 3}
-	for _, thing := range things {
-		fmt.Println("place thing", thing)
-		rooms = append(rooms, thing)
-	}
-	fmt.Println("rooms", rooms)
+	// rooms := make([]int, 0, 2)
+	// things := []int{0, 1, 2, 3}
+	// for _, thing := range things {
+	// fmt.Println("place thing", thing)
+	// rooms = append(rooms, thing)
+	// }
+	// fmt.Println("rooms", rooms)
 
-	box := []int{}
-	items := []int{0, 1, 2, 3}
-	for index, item := range items {
-		if index > 2 {
-			break
-		}
+	// box := []int{}
+	// items := []int{0, 1, 2, 3}
+	// for index, item := range items {
+	// if index > 2 {
+	// break
+	// }
 
-		box = append(box, item)
-	}
-	fmt.Println("box", box)
+	// box = append(box, item)
+	// }
+	// fmt.Println("box", box)
+
+	numbers := []int{1}
+	fmt.Println("numbers: ", numbers[1:])
 }
