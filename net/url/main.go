@@ -25,4 +25,13 @@ func main() {
 	if _, err := url.ParseRequestURI("http://google.com/ss/cdsa?cdsa=cd"); err != nil {
 		fmt.Println("5", err)
 	}
+
+	url := url.URL{
+		Scheme:   "http",
+		Host:     "127.0.0.1:8080",
+		Path:     "foo/bar",
+		RawQuery: "baz=example",
+	}
+
+	fmt.Println("6", url.String())
 }
