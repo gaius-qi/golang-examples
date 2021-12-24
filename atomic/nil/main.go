@@ -14,6 +14,12 @@ func main() {
 
 	rawFood := av.Load()
 	fmt.Println("rawFood: ", rawFood)
+
+	car := atomic.Value{}
+	rawCar := car.Load()
+	if rawCar == nil {
+		fmt.Println("rawCar", rawCar)
+	}
 }
 
 func set(av atomic.Value, item food) {
