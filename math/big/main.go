@@ -7,6 +7,7 @@ import (
 
 func main() {
 	fmt.Println(Cmp(1.0, 1.0))
+	fmt.Println(Cmp(1.1, 1.0))
 }
 
 func Cmp(a float64, b float64) bool {
