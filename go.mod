@@ -16,6 +16,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e
 	github.com/golang/mock v1.5.0
 	github.com/gorilla/mux v1.8.0 // indirect
+	github.com/looplab/fsm v0.3.0
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/montanaflynn/stats v0.6.6
 	github.com/opencontainers/go-digest v1.0.0 // indirect
