@@ -10,5 +10,6 @@ func main() {
 	if err != nil {
 		fmt.Println("move failed: ", err)
 	}
+
 	fmt.Println(out)
 }
