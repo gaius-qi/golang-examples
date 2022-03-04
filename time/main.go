@@ -13,6 +13,6 @@ func main() {
 	time.Sleep(2 * time.Second)
 	t2 := time.Now().UnixNano()
 	at2 := time.Unix(0, t2)
-	aa := at2.Sub(at1)
-	fmt.Println(aa.Nanoseconds())
+	diff := at2.Sub(at1)
+	fmt.Println(diff.Nanoseconds())
 }
