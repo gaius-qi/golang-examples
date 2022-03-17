@@ -11,6 +11,7 @@ import (
 
 func main() {
 	g := errgroup.Group{}
+
 	g.Go(func() error {
 		return errors.New("goroutine 1")
 	})
