@@ -17,7 +17,6 @@ func main() {
 	}
 
 	fmt.Println("named:", named.String())
-
 	repo, err := client.NewRepository(named, "https://registry-1.docker.io", http.DefaultTransport)
 	if err != nil {
 		panic(err)
