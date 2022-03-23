@@ -13,6 +13,7 @@ require (
 	github.com/docker/go-metrics v0.0.1 // indirect
 	github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7 // indirect
 	github.com/gin-gonic/gin v1.7.2
+	github.com/gocarina/gocsv v0.0.0-20220310154401-d4df709ca055
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e
 	github.com/golang/mock v1.5.0
 	github.com/gorilla/mux v1.8.0 // indirect
