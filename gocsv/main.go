@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gocarina/gocsv"
@@ -27,6 +28,12 @@ func main() {
 	}); err != nil {
 		panic(err)
 	}
+
+	items, err := s.list()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%#v", items)
 }
 
 type Item struct {
@@ -67,4 +74,19 @@ func (s *Store) create(items ...*Item) error {
 		return err
 	}
 	return nil
+}
+
+func (s *Store) list() ([]*Item, error) {
+	file, err := os.Open(s.path)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var items []*Item
+	if err := gocsv.UnmarshalFile(file, &items); err != nil {
+		return nil, err
+	}
+
+	return items, nil
 }
