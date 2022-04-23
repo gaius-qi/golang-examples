@@ -22,6 +22,7 @@ func receiveCakeAndPack(cs chan string) {
 
 func main() {
 	cs := make(chan string)
+
 	go makeCakeAndSend(cs, 5)
 	receiveCakeAndPack(cs)
 }
