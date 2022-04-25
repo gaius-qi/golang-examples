@@ -60,6 +60,7 @@ func newStore(path string) (*Store, error) {
 	if err := gocsv.MarshalFile([]*Item{}, file); err != nil {
 		return nil, err
 	}
+
 	return s, nil
 }
 
@@ -73,6 +74,7 @@ func (s *Store) create(items ...*Item) error {
 	if err := gocsv.MarshalWithoutHeaders(items, file); err != nil {
 		return err
 	}
+
 	return nil
 }
 
