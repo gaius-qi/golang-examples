@@ -33,6 +33,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
 	fmt.Printf("%#v", items)
 }
 
