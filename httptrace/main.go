@@ -40,6 +40,7 @@ func main() {
 			fmt.Printf("connect done: %v\n", time.Now())
 		},
 	}
+
 	req = req.WithContext(httptrace.WithClientTrace(req.Context(), trace))
 	transport := &http.Transport{
 
@@ -63,5 +64,6 @@ func main() {
 		return
 	}
 
+	fmt.Printf("client cost: %v\n", cost.Seconds()*1e3)
 	fmt.Printf("client cost: %v\n", cost.Seconds()*1e3)
 }
