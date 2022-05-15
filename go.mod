@@ -9,7 +9,7 @@ require (
 	github.com/bits-and-blooms/bitset v1.2.1
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/distribution/distribution v2.7.1+incompatible
-	github.com/docker/distribution v2.7.1+incompatible
+	github.com/docker/distribution v2.8.0+incompatible
 	github.com/docker/go-metrics v0.0.1 // indirect
 	github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7 // indirect
 	github.com/gin-gonic/gin v1.7.2
