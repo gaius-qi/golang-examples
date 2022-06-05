@@ -30,6 +30,7 @@ func main() {
 	time.Sleep(3 * time.Second)
 	// broadcast exit signal
 	close(exit)
+
 	// wait for all worker goroutines exit
 	for i := 0; i < N; i++ {
 		<-done
