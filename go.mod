@@ -35,6 +35,7 @@ require (
 	go.uber.org/atomic v1.4.0
 	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
 	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a
+	golang.org/x/time v0.0.0-20201208040808-7e3f01d25324
 	gonum.org/v1/gonum v0.9.3
 	gopkg.in/yaml.v2 v2.4.0
 )
