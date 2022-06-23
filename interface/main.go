@@ -6,5 +6,6 @@ type Food interface{}
 
 func main() {
 	var food Food
+
 	fmt.Println(food == nil)
 }
