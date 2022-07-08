@@ -6,6 +6,9 @@ import (
 )
 
 func main() {
-	err := os.MkdirAll("", 0755)
-	fmt.Println(err)
+	err1 := os.MkdirAll("", 0755)
+	fmt.Println(err1)
+
+	err2 := os.MkdirAll("main.go", 0755)
+	fmt.Println(err2)
 }
