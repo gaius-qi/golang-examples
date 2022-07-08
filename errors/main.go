@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/hashicorp/go-multierror"
 	pkgerrors "github.com/pkg/errors"
 )
 
@@ -23,4 +24,20 @@ func main() {
 
 	fmt.Println(errors.Is(e3, a))
 	fmt.Println(errors.Is(e4, a))
+
+	var errs []error
+
+	errs = append(errs, a)
+	errs = append(errs, a)
+	h := fmt.Errorf("%s", errs)
+	fmt.Println(h)
+
+	var result *multierror.Error
+	fmt.Println(result.ErrorOrNil() == nil)
+	b := errors.New("failed")
+	fmt.Println(result.ErrorOrNil() == nil)
+	result = multierror.Append(result, b)
+	result = multierror.Append(result, b)
+	fmt.Println(result.Error())
+	fmt.Println(result.ErrorOrNil())
 }
