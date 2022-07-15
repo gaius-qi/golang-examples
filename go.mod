@@ -29,6 +29,7 @@ require (
 	github.com/sgreben/testing-with-gomock v0.0.0-20180127205614-2990fb8af60c
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.12.0
+	github.com/waterdrink/golang_dag v0.0.0-20210205033624-5c916e8dba6e
 	github.com/willf/bitset v1.1.11
 	github.com/xlab/treeprint v1.1.0
 	go.uber.org/atomic v1.9.0
