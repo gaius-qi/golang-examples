@@ -4,19 +4,20 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/heimdalr/dag"
+	dag "github.com/waterdrink/golang_dag"
 )
 
 func main() {
-
 	// initialize a new graph
 	d := dag.NewDAG()
 
 	// init three vertices
 	var ids []string
-	for i := 0; i < 2000; i++ {
-		id, _ := d.AddVertex(i)
-		ids = append(ids, id)
+	for i := 0; i < 50000; i++ {
+		if err := d.AddVertex(fmt.Sprint(i), i); err != nil {
+			panic(err)
+		}
+		ids = append(ids, fmt.Sprint(i))
 	}
 
 	for i := 0; i < len(ids)-1; i++ {
@@ -26,10 +27,10 @@ func main() {
 	}
 
 	startTime := time.Now()
-	if err := d.AddEdge(ids[4], ids[100]); err != nil {
+	if err := d.AddEdge(ids[4], ids[400]); err != nil {
 		panic(err)
 	}
 
 	elapsedTime := time.Since(startTime) / time.Millisecond
-	fmt.Printf("2000 in %d ms", elapsedTime)
+	fmt.Printf("100000 in %d ms", elapsedTime)
 }
