@@ -12,16 +12,23 @@ func main() {
 
 	// init three vertices
 	var ids []string
-	for i := 0; i < 50000; i++ {
+	for i := 0; i < 1000000; i++ {
 		if err := d.AddVertex(fmt.Sprint(i), i); err != nil {
 			panic(err)
 		}
 		ids = append(ids, fmt.Sprint(i))
 	}
 
+	edgeCount := 10
 	for i := 0; i < len(ids)-1; i++ {
-		if err := d.AddEdge(ids[i], ids[i+1]); err != nil {
-			panic(err)
+		if i+edgeCount > len(ids)-1 {
+			break
+		}
+
+		for n := 1; n < edgeCount; n++ {
+			if err := d.AddEdge(ids[i], ids[i+n]); err != nil {
+				panic(err)
+			}
 		}
 	}
 
