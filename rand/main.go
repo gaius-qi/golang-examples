@@ -9,4 +9,7 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	fmt.Println(rand.Intn(100))
+
+	permutation := rand.Perm(10)[:10]
+	fmt.Println(permutation)
 }

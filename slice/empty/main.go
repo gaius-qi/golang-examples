@@ -10,5 +10,5 @@ func main() {
 	fmt.Println(s1[1:])
 
 	s2 := []string{"a", "b", "c", "d"}
-	fmt.Println(s2[:1])
+	fmt.Println(s2[:0])
 }
