@@ -9,6 +9,7 @@ require (
 	github.com/aliyun/aliyun-oss-go-sdk v2.2.4+incompatible
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/bits-and-blooms/bitset v1.2.2
+	github.com/deckarep/golang-set/v2 v2.1.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/distribution/distribution v2.8.1+incompatible
 	github.com/docker/distribution v2.8.1+incompatible
