@@ -34,4 +34,8 @@ func main() {
 	if err := bucket.PutObject(objectKey, reader); err != nil {
 		panic(err)
 	}
+
+	if err := bucket.DeleteObject(objectKey); err != nil {
+		panic(err)
+	}
 }
