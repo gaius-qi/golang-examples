@@ -19,11 +19,9 @@ func main() {
 	}
 
 	df1 := dataframe.ReadCSV(f)
-
 	fmt.Println(df1)
 
 	users := []User{{Name: "jack", Age: 18}, {Name: "lucy", Age: 20}}
 	df2 := dataframe.LoadStructs(users)
-
 	fmt.Println(df2)
 }
