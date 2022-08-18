@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net"
+	"net/url"
 )
 
 func main() {
@@ -17,4 +18,12 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(host3, port3)
+
+	u, err := url.Parse("vsock://0.0.0.0:1010")
+	if err != nil {
+		panic(err)
+	}
+
+	host4, port4, err := net.SplitHostPort(u.Host)
+	fmt.Println(host4, port4, err)
 }
