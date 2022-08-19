@@ -19,4 +19,11 @@ func main() {
 	}
 
 	fmt.Println(string(o2))
+
+	o3, err3 := exec.Command("kubectl", "-n", "dragonfly-system", "exec", "-c", "seed-peer", "dragonfly-seed-peer-1", "--", "sh", "-c", "sha256sum /var/lib/dragonfly/581e9ef4c4e8b3363ca37521f451f04f924fc2f1fd1834143e4d490396f389c2/*/data").CombinedOutput()
+	if err2 != nil {
+		fmt.Println(err3)
+	}
+
+	fmt.Println(string(o3))
 }
