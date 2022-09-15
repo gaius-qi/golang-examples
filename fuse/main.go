@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"log"
 
 	"github.com/hanwen/go-fuse/v2/fs"
 	"github.com/hanwen/go-fuse/v2/fuse"
@@ -86,14 +85,14 @@ func main() {
 
 	flag.Parse()
 	if len(flag.Args()) < 1 {
-		log.Fatal("Usage:\n  myfs MOUNTPOINT")
+		panic("Usage:\n  myfs MOUNTPOINT")
 	}
 
 	opts := &fs.Options{}
 	opts.Debug = *debug
 	server, err := fs.Mount(flag.Arg(0), &fileSystem{}, opts)
 	if err != nil {
-		log.Fatalf("Mount fail: %v\n", err)
+		panic(err)
 	}
 
 	server.Wait()
