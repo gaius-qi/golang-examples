@@ -13,4 +13,5 @@ func main() {
 	}
 
 	fmt.Println(currentUser)
+	fmt.Println(currentUser.Username)
 }
