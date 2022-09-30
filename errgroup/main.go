@@ -21,6 +21,11 @@ func main() {
 		return errors.New("goroutine 2")
 	})
 
+	g.Go(func() error {
+		time.Sleep(4 * time.Second)
+		return errors.New("goroutine 3")
+	})
+
 	werr := g.Wait()
 	fmt.Println(werr)
 
