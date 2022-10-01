@@ -19,4 +19,6 @@ func main() {
 	}
 
 	fmt.Printf("Leaf %+v\n", leaf.IsCA)
+	fmt.Printf("Leaf %+v\n", leaf.DNSNames)
+	fmt.Printf("Leaf %+v\n", leaf.IPAddresses)
 }
