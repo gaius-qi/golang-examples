@@ -13,7 +13,7 @@ func main() {
 
 	// init three vertices
 	var ids []string
-	for i := 0; i < 50000; i++ {
+	for i := 0; i < 100000; i++ {
 		if err := d.AddVertex(fmt.Sprint(i), i); err != nil {
 			panic(err)
 		}
