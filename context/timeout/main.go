@@ -23,7 +23,7 @@ func asyncCall() {
 	case <-ctx.Done():
 		fmt.Println("call successfully!!!")
 		return
-	case <-time.After(2 * time.Second):
+	case <-time.After(1 * time.Second):
 		fmt.Println("timeout!!!")
 		return
 	}
@@ -38,6 +38,7 @@ func run() {
 	done := make(chan struct{})
 	go func() {
 		defer close(done)
+
 		time.Sleep(1 * time.Second)
 		fmt.Println("running")
 	}()
