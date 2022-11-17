@@ -5,6 +5,8 @@ import (
 	"os"
 
 	"github.com/shirou/gopsutil/v3/cpu"
+	"github.com/shirou/gopsutil/v3/disk"
+	"github.com/shirou/gopsutil/v3/host"
 	"github.com/shirou/gopsutil/v3/mem"
 	"github.com/shirou/gopsutil/v3/net"
 	"github.com/shirou/gopsutil/v3/process"
@@ -30,6 +32,15 @@ func main() {
 	oc, _ := cpu.Percent(0, false)
 	fmt.Printf("OS CPU Total Percent: %v\n", oc[0])
 
-	// on, _ := net.Connections("tcp")
-	// fmt.Printf("OS Proc Net: %v\n", on)
+	oct, _ := cpu.Times(false)
+	fmt.Printf("OS CPU Times: %v", oct)
+
+	on, _ := net.Connections("tcp")
+	fmt.Printf("OS Proc Net: %v\n", len(on))
+
+	d, _ := disk.Usage("/Users/qiwenbo/.dragonfly/data")
+	fmt.Printf("Dist: %v\n", d)
+
+	h, _ := host.Info()
+	fmt.Printf("Host: %v\n", h)
 }
