@@ -42,6 +42,7 @@ require (
 	golang.org/x/time v0.0.0-20220609170525-579cf78fd858
 	gonum.org/v1/gonum v0.11.0
 	gopkg.in/yaml.v2 v2.4.0
+	stathat.com/c/consistent v1.0.0
 )
 
 require (
