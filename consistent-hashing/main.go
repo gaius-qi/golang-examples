@@ -1,9 +1,9 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 
-	"github.com/google/uuid"
 	"stathat.com/c/consistent"
 )
 
@@ -17,26 +17,33 @@ func main() {
 	hashring.Add("37.11.29.34:scheduler-a")
 	hashring.Add("37.11.323.34:scheduler-b")
 
+	circle, err := GenerateCircle(hashring)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("circle: %#v\n", circle)
+}
+
+func GenerateCircle(hashring *consistent.Consistent) (map[string]string, error) {
 	members := hashring.Members()
 	circle := make(map[string]string, len(members))
 
 	for i := 0; i <= len(members)*10; i++ {
-		key := uuid.New().String()
+		key := fmt.Sprint(i)
 		member, err := hashring.Get(key)
 		if err != nil {
-			panic(err)
+			fmt.Printf("hashring get member failed: %s", err.Error())
+			continue
 		}
 
 		if _, ok := circle[member]; !ok {
-			fmt.Printf("%d append memeber %s key %s\n", i, member, key)
 			circle[member] = key
 			if len(circle) == len(members) {
-				break
+				return circle, nil
 			}
 		}
-
-		fmt.Printf("%d ignore memeber %s key %s\n", i, member, key)
 	}
 
-	fmt.Printf("circle: %#v\n", circle)
+	return nil, errors.New("can not generate circle")
 }

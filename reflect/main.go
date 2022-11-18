@@ -28,4 +28,14 @@ func main() {
 	}
 
 	fmt.Println("not equal")
+
+	a := []string{"a", "c"}
+	b := []string{"a", "b"}
+
+	if reflect.DeepEqual(a, b) {
+		fmt.Println("equal")
+		return
+	}
+
+	fmt.Println("not equal")
 }
