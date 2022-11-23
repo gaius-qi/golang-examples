@@ -14,17 +14,19 @@ func main() {
 	}
 
 	if err := s.create(&Item{
-		ID:   1,
-		Name: "jack",
-		Age:  18,
+		ID:        1,
+		Name:      "jack",
+		Age:       18,
+		Addresses: []Address{{Street: "a", City: "b"}},
 	}); err != nil {
 		panic(err)
 	}
 
 	if err := s.create(&Item{
-		ID:   2,
-		Name: "lucy",
-		Age:  20,
+		ID:        2,
+		Name:      "lucy",
+		Age:       20,
+		Addresses: []Address{{Street: "c", City: "d"}},
 	}); err != nil {
 		panic(err)
 	}
@@ -34,13 +36,20 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("%#v", items)
+	fmt.Printf("%#v\n", items)
+	fmt.Printf("%#v\n", items[0].Addresses[0])
 }
 
 type Item struct {
-	ID   uint   `csv:"id"`
-	Name string `csv:"name"`
-	Age  uint   `csv:"age"`
+	ID        uint      `csv:"id"`
+	Name      string    `csv:"name"`
+	Age       uint      `csv:"age"`
+	Addresses []Address `csv:"addresses" csv[]:"2"`
+}
+
+type Address struct {
+	Street string `csv:"street"`
+	City   string `csv:"city"`
 }
 
 type Store struct {

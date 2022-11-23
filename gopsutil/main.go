@@ -21,7 +21,7 @@ func main() {
 	pm, _ := proc.MemoryPercent()
 	fmt.Printf("Proc MEM Percent: %v\n", pm)
 
-	pn, _ := net.ConnectionsPid("tcp", 1788)
+	pn, _ := net.ConnectionsPid("tcp", 1380)
 	for _, conn := range pn {
 		fmt.Printf("Proc Proc Net: %v\n", conn)
 	}
@@ -33,10 +33,10 @@ func main() {
 	fmt.Printf("OS CPU Total Percent: %v\n", oc[0])
 
 	oct, _ := cpu.Times(false)
-	fmt.Printf("OS CPU Times: %v", oct)
+	fmt.Printf("OS CPU Times: %v\n", oct)
 
 	on, _ := net.Connections("tcp")
-	fmt.Printf("OS Proc Net: %v\n", len(on))
+	fmt.Printf("OS Proc Net: %#v\n", len(on))
 
 	d, _ := disk.Usage("/Users/qiwenbo/.dragonfly/data")
 	fmt.Printf("Dist: %v\n", d)
