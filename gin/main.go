@@ -25,8 +25,8 @@ func main() {
 			c.JSON(http.StatusInternalServerError, gin.H{"errors": err.Error()})
 			return
 		}
-
 		fmt.Println("object: ", params.Object)
+
 		c.JSON(200, gin.H{
 			"message": "ping",
 		})
