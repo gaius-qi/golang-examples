@@ -13,6 +13,7 @@ func main() {
 	}
 
 	for _, hop := range result.Hops {
-		fmt.Printf("Number: %d Success: %t Address: %s Host: %s ElapsedTime: %d TTL: %d\n", hop.N, hop.Success, hop.Address, hop.Host, hop.ElapsedTime.Milliseconds(), hop.TTL)
+		fmt.Printf("Number: %d Success: %t Address: %s Host: %s ElapsedTime: %d TTL: %d\n",
+			hop.N, hop.Success, hop.Address, hop.Host, hop.ElapsedTime.Milliseconds(), hop.TTL)
 	}
 }

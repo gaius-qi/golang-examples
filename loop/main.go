@@ -1,14 +1,19 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	for i := 0; i < 12; i++ {
-		go func() {
-			for {
-			}
-		}()
+	times := 10000000
+	now := time.Now()
+
+	for i := 0; i < times; i++ {
+		if i == 100 {
+			fmt.Println("=============")
+		}
 	}
 
-	time.Sleep(time.Hour)
+	fmt.Printf("times %d, cost %dms\n", times, time.Since(now).Milliseconds())
 }
