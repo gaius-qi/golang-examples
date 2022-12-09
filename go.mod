@@ -6,6 +6,7 @@ require (
 	d7y.io/dragonfly/v2 v2.0.5-beta.2
 	github.com/RichardKnop/machinery v1.10.6
 	github.com/Showmax/go-fqdn v1.0.0
+	github.com/aeden/traceroute v0.0.0-20210211061815-03f5f7cb7908
 	github.com/aliyun/aliyun-oss-go-sdk v2.2.4+incompatible
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/bits-and-blooms/bitset v1.2.2

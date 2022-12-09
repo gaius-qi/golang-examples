@@ -26,4 +26,18 @@ func main() {
 		}
 		fmt.Println(strings.TrimSuffix(hosts[0], "."))
 	}
+
+	var hosts []string
+	hosts, err = net.LookupAddr("127.0.0.1")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("hosts: %#v\n", hosts)
+
+	var ips []net.IP
+	ips, err = net.LookupIP("localhost")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("ips: %s\n", ips)
 }
