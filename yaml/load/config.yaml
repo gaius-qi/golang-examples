@@ -4,3 +4,9 @@ nodes:
     weight: 10
   - id: 2
     weight: 40
+ips:
+  - 127.0.0.1
+  - 0.0.0.0
+urls:
+  - https://google.com
+  - https://google.cn

@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"net"
+	"net/url"
 
 	"gopkg.in/yaml.v2"
 )
@@ -22,8 +24,10 @@ const (
 )
 
 type Config struct {
-	Name  string    `yaml:"name,omitempty" json:"name,omitempty"`
-	Nodes []*Weight `yaml:"nodes,omitempty" json:"nodes,omitempty"`
+	Name  string     `yaml:"name,omitempty"`
+	Nodes []*Weight  `yaml:"nodes,omitempty"`
+	IPs   []net.IP   `yaml:"ips,omitempty"`
+	urls  []*url.URL `yaml:"urls,omitempty"`
 }
 
 type Weight struct {
