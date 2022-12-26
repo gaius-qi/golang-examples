@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	N := 10
+	N := 20
 	exit := make(chan struct{})
 	done := make(chan struct{}, N)
 
@@ -27,7 +27,8 @@ func main() {
 		}(i)
 	}
 
-	time.Sleep(3 * time.Second)
+	time.Sleep(4 * time.Second)
+
 	// broadcast exit signal
 	close(exit)
 
