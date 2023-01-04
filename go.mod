@@ -34,6 +34,7 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 	github.com/sjwhitworth/golearn v0.0.0-20211014193759-a8b69c276cd8
 	github.com/spf13/viper v1.12.0
+	github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e
 	github.com/waterdrink/golang_dag v0.0.0-20210205033624-5c916e8dba6e
 	github.com/willf/bitset v1.1.11
 	github.com/xlab/treeprint v1.1.0
