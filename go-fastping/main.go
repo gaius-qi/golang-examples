@@ -10,12 +10,15 @@ import (
 
 func main() {
 	p := fastping.NewPinger()
-	ra, err := net.ResolveIPAddr("ip6:icmp", "2402:4e00::b")
+	// r0, err := net.ResolveIPAddr("ip6:icmp", "2402:4e00::b")
+	r0, err := net.ResolveIPAddr("ip4:icmp", "39.156.66.10")
 	if err != nil {
 		panic(err)
 	}
 
-	p.AddIPAddr(ra)
+	p.MaxRTT = 2 * time.Second
+	p.Debug = true
+	p.AddIPAddr(r0)
 	if _, err := p.Network("udp"); err != nil {
 		panic(err)
 	}
@@ -24,8 +27,11 @@ func main() {
 		fmt.Printf("IP Addr: %s receive, RTT: %v\n", addr.String(), rtt)
 	}
 
-	err = p.Run()
-	if err != nil {
+	p.OnIdle = func() {
+		fmt.Println("finish")
+	}
+
+	if err := p.Run(); err != nil {
 		fmt.Println(err)
 	}
 }
