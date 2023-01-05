@@ -16,6 +16,7 @@ require (
 	github.com/docker/distribution v2.8.1+incompatible
 	github.com/gin-gonic/gin v1.8.1
 	github.com/go-gota/gota v0.12.0
+	github.com/go-ping/ping v1.1.0
 	github.com/gocarina/gocsv v0.0.0-20221105105431-c8ef78125b99
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da
 	github.com/golang/mock v1.6.0
