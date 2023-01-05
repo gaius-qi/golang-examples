@@ -1,6 +1,6 @@
 module github.com/gaius-qi/golang-examples
 
-go 1.18
+go 1.19
 
 require (
 	d7y.io/dragonfly/v2 v2.0.5-beta.2
