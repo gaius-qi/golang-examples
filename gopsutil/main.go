@@ -27,7 +27,7 @@ func main() {
 	}
 
 	ov, _ := mem.VirtualMemory()
-	fmt.Printf("OS MEM Total: %v, Available:%v, UsedPercent:%f%%\n", ov.Total, ov.Available, ov.UsedPercent)
+	fmt.Printf("OS MEM Total: %v, Available:%v, UsedPercent:%f\n", ov.Total, ov.Available, ov.UsedPercent)
 
 	oc, _ := cpu.Percent(0, false)
 	fmt.Printf("OS CPU Total Percent: %v\n", oc[0])
