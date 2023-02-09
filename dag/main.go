@@ -31,6 +31,6 @@ func main() {
 		panic(err)
 	}
 
-	elapsedTime := time.Since(startTime) / time.Millisecond
-	fmt.Printf("100000 in %d ms", elapsedTime)
+	elapsedTime := time.Since(startTime) / time.Nanosecond
+	fmt.Printf("100000 in %d ns", elapsedTime)
 }
