@@ -38,6 +38,7 @@ func main() {
 	if err != nil {
 		panic("could not parse validation certificate")
 	}
+
 	if _, err := jwt.ParseWithClaims(stoken, claims, func(t *jwt.Token) (interface{}, error) {
 		if _, ok := t.Method.(*jwt.SigningMethodRSA); !ok {
 			return nil, fmt.Errorf("unsupported signing method in token")
