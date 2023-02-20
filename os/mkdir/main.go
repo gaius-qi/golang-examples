@@ -14,4 +14,7 @@ func main() {
 
 	err3 := os.MkdirAll("aa", 0755)
 	fmt.Println(err3)
+
+	err4 := os.MkdirAll("aa", 0755)
+	fmt.Println(err4)
 }
