@@ -10,6 +10,13 @@ func main() {
 		return
 	case 2:
 		fmt.Println("2")
+		if true {
+			break
+		}
+
+		fallthrough
+	case 3:
+		fmt.Println("3")
 		break
 	default:
 		fmt.Println("default")
