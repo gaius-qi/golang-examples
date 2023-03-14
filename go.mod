@@ -9,6 +9,7 @@ require (
 	github.com/aeden/traceroute v0.0.0-20210211061815-03f5f7cb7908
 	github.com/aliyun/aliyun-oss-go-sdk v2.2.4+incompatible
 	github.com/avast/retry-go v3.0.0+incompatible
+	github.com/aws/aws-sdk-go v1.44.45
 	github.com/bits-and-blooms/bitset v1.2.2
 	github.com/deckarep/golang-set/v2 v2.1.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -55,7 +56,6 @@ require (
 	cloud.google.com/go/iam v0.3.0 // indirect
 	cloud.google.com/go/pubsub v1.23.0 // indirect
 	github.com/RichardKnop/logging v0.0.0-20190827224416-1a693bdd4fae // indirect
-	github.com/aws/aws-sdk-go v1.44.45 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bradfitz/gomemcache v0.0.0-20220106215444-fb4bf637b56d // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
