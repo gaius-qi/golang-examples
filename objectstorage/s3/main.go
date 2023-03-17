@@ -20,7 +20,7 @@ func main() {
 
 	client := awss3.New(s, cfg.WithRegion("us-east-1"), cfg.WithEndpoint("s3.example.com"), cfg.WithS3ForcePathStyle(true), cfg.WithDisableSSL(true))
 	resp, err := client.GetObjectWithContext(context.Background(), &awss3.GetObjectInput{
-		Bucket: aws.String("d7y"),
+		Bucket: aws.String("bucket-name"),
 		Key:    aws.String("config.toml"),
 	})
 	if err != nil {
