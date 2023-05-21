@@ -10,21 +10,21 @@ func main() {
 	mutliGoroutineTimeout()
 }
 
-func asyncCall() {
+func AsyncCall() {
 	ctx, cancel := context.WithTimeout(context.Background(), 4*time.Second)
 	defer cancel()
 
 	go func(ctx context.Context) {
 		time.Sleep(3 * time.Second)
-		fmt.Println("reuqest!!!")
+		fmt.Println("reuqest!")
 	}(ctx)
 
 	select {
 	case <-ctx.Done():
-		fmt.Println("call successfully!!!")
+		fmt.Println("call successfully!")
 		return
 	case <-time.After(1 * time.Second):
-		fmt.Println("timeout!!!")
+		fmt.Println("timeout!")
 		return
 	}
 }
