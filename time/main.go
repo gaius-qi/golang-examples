@@ -15,4 +15,7 @@ func main() {
 	at2 := time.Unix(0, t2)
 	diff := at2.Sub(at1)
 	fmt.Println(diff.Nanoseconds())
+
+	t3, err := time.Parse(time.RFC3339Nano, fmt.Sprint(time.Now().Nanosecond()))
+	fmt.Println("-----", t3, err)
 }
