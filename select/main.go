@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 	tick := time.NewTicker(1 * time.Second)
@@ -8,6 +11,7 @@ func main() {
 	for {
 		select {
 		case <-tick.C:
+			fmt.Println("tick")
 			return
 		}
 	}
