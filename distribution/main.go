@@ -33,4 +33,8 @@ func main() {
 	}
 
 	fmt.Println("manifests:", mf)
+
+	for _, v := range distribution.ManifestMediaTypes() {
+		fmt.Println("media type:", v)
+	}
 }
