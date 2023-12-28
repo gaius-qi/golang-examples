@@ -41,8 +41,22 @@ func testInterface(animaler Animaler) {
 	animaler.eat()
 }
 
-func main() {
+type A interface {
+	test()
+}
 
+type A1 struct {
+}
+
+func (a1 A1) test() {
+	fmt.Println("A1")
+}
+
+type B struct {
+	A
+}
+
+func main() {
 	cat := Cat{Animal: Animal{name: "Jack", age: 2, food: "fish"}, time: 8}
 	cat.sleep()
 	testInterface(cat)
@@ -50,4 +64,7 @@ func main() {
 	dog := Dog{Animal: Animal{name: "Lucy", age: 2, food: "meat"}, plays: "football"}
 	dog.play()
 	testInterface(dog)
+
+	b := B{A: A1{}}
+	b.test()
 }
