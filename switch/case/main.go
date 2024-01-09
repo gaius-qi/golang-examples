@@ -23,4 +23,11 @@ func main() {
 	}
 
 	fmt.Println("last line")
+
+	switch {
+	case true:
+		fmt.Println("true")
+	case 1 == 1:
+		fmt.Println("1 == 1")
+	}
 }
