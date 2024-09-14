@@ -8,7 +8,13 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
+type User struct {
+	Name string
+}
+
 func main() {
+	ctx := context.Background()
+
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
 		Password: "",
@@ -18,6 +24,22 @@ func main() {
 	if _, err := rdb.Ping(context.Background()).Result(); err != nil {
 		panic(err)
 	}
+
+	rdb.HSet(ctx, "user:1", "name", "Alice", "age", 30)
+	rdb.HSet(ctx, "user:2", "name", "Bob", "age", 25)
+
+	rdb.HSet(ctx, "order:100", "user_id", 1, "product", "Laptop", "amount", 1200)
+	rdb.HSet(ctx, "order:101", "user_id", 2, "product", "Phone", "amount", 800)
+
+	rdb.SAdd(ctx, "user:1:orders", 100)
+	rdb.SAdd(ctx, "user:2:orders", 101)
+
+	user, err := rdb.HGetAll(ctx, "user:1").Result()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(user)
 
 	k, err := keys(context.Background(), rdb, "1111*")
 	fmt.Println(k, len(k), err)
