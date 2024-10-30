@@ -8,7 +8,8 @@ import (
 
 func main() {
 	h := sha256.New()
-	h.Write([]byte("127.0.0.1"))
+	h.Write([]byte("https://example.com"))
 	h.Write([]byte("foo"))
+	h.Write([]byte("bar"))
 	fmt.Println(hex.EncodeToString(h.Sum(nil)))
 }

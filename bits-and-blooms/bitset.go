@@ -27,4 +27,14 @@ func main() {
 
 	b.ClearAll()
 	fmt.Println("count: ", b.Count())
+
+	b1 := bitset.New(1000)
+	b1.SetAll()
+	fmt.Println("b1 length: ", b1.Len())
+	fmt.Println("b1 count: ", b1.Count())
+
+	b2 := bitset.New(1000)
+	b2.Set(uint(10))
+	fmt.Println("b2 length: ", b2.Len())
+	fmt.Println("b2 count: ", b2.Count())
 }
