@@ -19,6 +19,20 @@ func main() {
 		})
 	})
 
+	r.GET("/large-content-length", func(c *gin.Context) {
+		c.Writer.Header().Set("Content-Length", "214748364800")
+		c.JSON(200, gin.H{
+			"message": "abc",
+		})
+	})
+
+	r.HEAD("/large-content-length", func(c *gin.Context) {
+		c.Writer.Header().Set("Content-Length", "214748364800")
+		c.JSON(200, gin.H{
+			"message": "abc",
+		})
+	})
+
 	r.GET("/bucket/*object", func(c *gin.Context) {
 		var params ObjectParams
 		if err := c.ShouldBindUri(&params); err != nil {
@@ -32,5 +46,5 @@ func main() {
 		})
 	})
 
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	r.Run("0.0.0.0:8088") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
