@@ -13,6 +13,10 @@ func main() {
 	}
 	defer file.Close()
 
+	f, err := os.Stat("./test")
+
+	fmt.Println("file:", f.Sys())
+
 	buf := make([]byte, 2)
 	for {
 		n, err := file.Read(buf)
