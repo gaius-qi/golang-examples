@@ -18,6 +18,7 @@ require (
 	github.com/distribution/distribution v2.8.1+incompatible
 	github.com/docker/distribution v2.8.3+incompatible
 	github.com/gin-gonic/gin v1.10.0
+	github.com/go-echarts/statsview v0.3.4
 	github.com/go-gota/gota v0.12.0
 	github.com/go-http-utils/headers v0.0.0-20181008091004-fed159eddc2a
 	github.com/go-ping/ping v1.1.0
@@ -83,6 +84,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.4 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/go-echarts/go-echarts/v2 v2.2.4 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
@@ -127,6 +129,7 @@ require (
 	github.com/rabbitmq/amqp091-go v1.9.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/rocketlaunchr/dataframe-go v0.0.0-20201007021539-67b046771f0b // indirect
+	github.com/rs/cors v1.8.2 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
 	github.com/shoenig/go-m1cpu v0.1.6 // indirect
