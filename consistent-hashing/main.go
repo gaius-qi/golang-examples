@@ -13,16 +13,34 @@ func main() {
 	hashring.Add("30.46.243.252:scheduler-1")
 	hashring.Add("11.46.101.47:scheduler-2")
 	hashring.Add("11.46.129.55:scheduler-3")
-	hashring.Add("21.26.329.11:scheduler-4")
-	hashring.Add("37.11.29.34:scheduler-a")
-	hashring.Add("37.11.323.34:scheduler-b")
+	// hashring.Add("21.26.329.11:scheduler-4")
+	// hashring.Add("37.11.29.34:scheduler-a")
+	// hashring.Add("37.11.323.34:scheduler-b")
 
-	circle, err := GenerateCircle(hashring)
+	s, err := hashring.Get("test")
 	if err != nil {
 		panic(err)
 	}
+	fmt.Printf("Get test: %s\n", s)
 
-	fmt.Printf("circle: %#v\n", circle)
+	s, err = hashring.Get("test-retry-1")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("Get test-1: %s\n", s)
+
+	s, err = hashring.Get("test-retry-2")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("Get test-2: %s\n", s)
+
+	// circle, err := GenerateCircle(hashring)
+	// if err != nil {
+	// panic(err)
+	// }
+
+	// fmt.Printf("circle: %#v\n", circle)
 }
 
 func GenerateCircle(hashring *consistent.Consistent) (map[string]string, error) {
