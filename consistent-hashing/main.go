@@ -10,30 +10,33 @@ import (
 func main() {
 	hashring := consistent.New()
 
-	hashring.Add("30.46.243.252:scheduler-1")
-	hashring.Add("11.46.101.47:scheduler-2")
-	hashring.Add("11.46.129.55:scheduler-3")
-	// hashring.Add("21.26.329.11:scheduler-4")
-	// hashring.Add("37.11.29.34:scheduler-a")
-	// hashring.Add("37.11.323.34:scheduler-b")
+	hashring.Add("scheduler-0")
+	hashring.Add("scheduler-1")
+	hashring.Add("scheduler-2")
+	hashring.Add("scheduler-3")
+	hashring.Add("scheduler-4")
+	hashring.Add("scheduler-5")
+	hashring.Add("scheduler-6")
 
-	s, err := hashring.Get("test")
+	fmt.Printf("Members: %v\n", hashring.Members())
+
+	s, err := hashring.Get("task-0")
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Get test: %s\n", s)
+	fmt.Printf("Get key {task-0}: %s\n", s)
 
-	s, err = hashring.Get("test-retry-1")
+	s, err = hashring.Get("task-1")
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Get test-1: %s\n", s)
+	fmt.Printf("Get key {task-1}: %s\n", s)
 
-	s, err = hashring.Get("test-retry-2")
+	s, err = hashring.Get("task-2")
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Get test-2: %s\n", s)
+	fmt.Printf("Get key {task-2}: %s\n", s)
 
 	// circle, err := GenerateCircle(hashring)
 	// if err != nil {
