@@ -10,4 +10,5 @@ func main() {
 
 	fmt.Println("str to []byte: ", b)
 	fmt.Println("[]byte to str: ", string(b))
+	fmt.Println("len: ", len([]byte("")))
 }
