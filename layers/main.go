@@ -10,8 +10,8 @@ import (
 type Node struct {
 	IP                 string  `json:"ip,omitempty"`
 	Hostname           string  `json:"hostname,omitempty"`
-	Layers             []Layer `json:"layers"`
-	SchedulerClusterID int     `json:"scheduler_cluster_id"`
+	CachedLayers       []Layer `json:"cachedLayers"`
+	SchedulerClusterID int     `json:"schedulerClusterId"`
 }
 
 type Layer struct {
@@ -44,6 +44,6 @@ func main() {
 		} else {
 			identifier = fmt.Sprintf("Node %d", i+1)
 		}
-		fmt.Printf("%s has %d layers\n", identifier, len(node.Layers))
+		fmt.Printf("%s has %d layers\n", identifier, len(node.CachedLayers))
 	}
 }
